@@ -1,0 +1,129 @@
+.signinSection {
+    height: max-content;
+    width: 100vw;
+}
+
+.registerHeader {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 80px;
+}
+
+.logoContainer {
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.logoImg {
+    height: 100%;
+    width: 100%;
+}
+
+.signin {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signinForm {
+    height: max-content;
+    width: 350px;
+}
+
+.signinForm.active {
+    display: none;
+}
+
+.emailConfirmation {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.emailConfirmation p {
+    text-align: center;
+}
+
+.emailConfirmation.active {
+    display: block;
+}
+
+.formHeader {
+    height: max-content;
+    width: 100%;
+    padding: 0 0 40px 0;
+}
+
+.formContent {
+    height: max-content;
+    width: 100%;
+}
+
+.details {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.details label {
+    padding: 5px 0;
+    color: #c0c0c0;
+}
+
+.details input {
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #c0c0c0;
+    color: #c0c0c0;
+    background: transparent;
+    outline: none;
+}
+
+.dontHave {
+    height: max-content;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.formSubmitBtnContainer {
+    padding: 20px 0;
+    width: 100%;
+    height: max-content;
+}
+
+.submitBtn {
+    color: #ffffff;
+    background: #660066;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.dontHave a,
+.forget a {
+    color: #660066;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .signinForm {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .registerHeader {
+        padding: 0 20px;
+    }
+}

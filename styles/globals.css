@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sedan:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #ffffff;
+  --background: #000000;
+  --backgroundLight: #92b2f5;
+  --primary: #660066;
+  --bars: #1A2E66;
+  --text: #000000;
+  --grey: #c0c0c0;
+  --lighterGrey: #eeeded;
+  --danger: #fa0606;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  overflow-y: auto;
+  background: var(--background);
+}
+
+#header {
+    position: relative;
+    height: 80px;
+    width: 100vw;
+    padding: 0 50px;
+    z-index: 1;
+}
+
+#footer {
+    height: max-content;
+    width: 100vw;
+    padding: 20px 80px;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+p {
+    font-size: 17px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+a {
+    font-size: 17px;
+}

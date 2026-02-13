@@ -1,0 +1,412 @@
+.header {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333333;
+}
+
+.headerLeft {
+    height: max-content;
+    width: max-content;
+}
+
+.headerLogoContainer {
+    position: relative;
+    height: 40px;
+    width: 140px;
+    cursor: pointer;
+}
+
+.headerLogo {
+    height: 100%;
+    width: 100%;
+}
+
+.headerRight {
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.hamburgerContainer {
+    display: none;
+}
+
+.menu .menuContent a {
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+    transform: 0.3s ease-in-out;
+}
+
+.menu .menuContent {
+    display: inline-block;
+    margin: 0 0 0 10px;
+}
+
+.menu .menuContent .subMenu {
+    display: none;
+    position: absolute;
+    height: max-content;
+    width: max-content;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    background: #333333;
+    border-top: 10px solid #660066;
+    z-index: 999;
+    transition: all 0.3s ease;
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.menu .menuContent .sub2 {
+    left: 0;
+    width: 100vw;
+}
+
+.menu .menuContent:hover .subMenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .menuContent:hover .sub2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.menu .menuContent .subMenu .menuContent {
+    margin: 10px 10px 10px 10px;
+}
+
+.menu .menuContent a .icon {
+    position: relative;
+    height: 10px;
+    width: 10px;
+    margin-left: 5px;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.menu .menuContent a .icon::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    width: 10px;
+    height: 2px;
+    background: #ffffff;
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+.menu .menuContent a:hover .icon::after {
+    transform: rotate(-45deg);
+}
+
+.menu .menuContent a .icon::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 10px;
+    height: 2px;
+    background: #ffffff;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease;
+}
+
+.menu .menuContent a:hover .icon::before {
+    transform: rotate(45deg);
+}
+
+.headerUserContainer {
+    margin: 0 0 0 100px;
+}
+
+.signupBtn {
+    background: #660066;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    border: 2px solid #660066;
+}
+
+.loginBtn {
+    border: 2px solid #ffffff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin: 0 0 0 10px;
+}
+
+.userBtn {
+    height: 40px;
+    width: 40px;
+}
+
+.headerUserImg {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+@media screen and (min-height: 1366px) {
+    .headerUserContainer {
+        margin: 0 0 0 40px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+    .headerLogoContainer {
+        position: relative;
+        z-index: 5;
+    }
+    .headerRight {
+        display: none;
+        transition: 0.3s ease-in-out;
+    }
+    .headerRight.active {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        padding: 80px 20px;
+        background: #333333;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hamburgerContainer {
+        display: block;
+        position: relative;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+    }
+    .hamburger {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        width: 40px;
+        background: #ffffff;
+        transition: 0.3s ease-in-out;
+    }
+    .hamburger.active {
+        height: 0;
+        width: 0;
+    }
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        height: 2px;
+        width: 20px;
+        background: #ffffff;
+        transition: 0.3s ease-in-out;
+    }
+    .hamburger.active::after {
+        top: 0;
+        left: -15px;
+        transform: rotate(45deg);
+        width: 30px;
+    }
+    .hamburger::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        height: 2px;
+        width: 20px;
+        background: #ffffff;
+        transition: 0.3s ease-in-out;
+    }
+    .hamburger.active::before {
+        top: 0;
+        left: -15px;
+        transform: rotate(-45deg);
+        width: 30px;
+    }
+    .menu {
+        display: block;
+    }
+    .menu .menuContent {
+        display: block;
+        margin: 30px 20px 30px 10px;
+    }
+    .menu .menuContent .subMenu {
+        display: none;
+        position: relative;
+        background: #000000;
+    }
+    .menu .menuContent:hover .subMenu {
+        display: block;
+    }
+    .menu .menuContent a {
+        justify-content: space-between;
+        font-size: 15px;
+    }
+    .userContainer {
+        padding: 0 20px;
+    }
+    .shoppingCartContainer.active {
+        position: fixed;
+        top: 5px;
+        left: 5px;
+        display: block;
+        z-index: 999;
+    }
+    .menu .menuContent a .icon {
+        display: none;
+    }
+    .headerUserContainer {
+        margin: 0;
+    }
+    .signupBtn,
+    .loginBtn {
+        font-size: 15px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+    }
+    .headerSignUpContainer {
+        margin: 50px 0 0 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .headerLogoContainer {
+        position: relative;
+        z-index: 5;
+    }
+    .headerLogoContainer {
+        z-index: 5;
+    }
+    .headerRight {
+        display: none;
+        transition: 0.3s ease-in-out;
+    }
+    .headerRight.active {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        padding: 80px 20px;
+        background: #333333;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #header {
+        padding: 0 20px;
+    }
+    .hamburgerContainer {
+        display: block;
+        position: relative;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        z-index: 5;
+    }
+    .hamburger {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2px;
+        width: 40px;
+        background: #ffffff;
+        transition: 0.3s ease-in-out;
+    }
+    .hamburger.active {
+        height: 0;
+        width: 0;
+    }
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 0;
+        height: 2px;
+        width: 20px;
+        background: #ffffff;
+        transition: 0.3s ease-in-out;
+    }
+    .hamburger.active::after {
+        top: 0;
+        left: -15px;
+        transform: rotate(45deg);
+        width: 30px;
+    }
+    .hamburger::before {
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: 20px;
+        height: 2px;
+        width: 20px;
+        background: #ffffff;
+        transition: 0.3s ease-in-out;
+    }
+    .hamburger.active::before {
+        top: 0;
+        left: -15px;
+        transform: rotate(-45deg);
+        width: 30px;
+    }
+    .menu {
+        display: block;
+    }
+    .menu .menuContent {
+        display: block;
+        margin: 30px 20px 30px 10px;
+    }
+    .menu .menuContent .subMenu {
+        display: none;
+        position: relative;
+        background: #000000;
+    }
+    .menu .menuContent:hover .subMenu {
+        display: block;
+    }
+    .signupBtn,
+    .loginBtn {
+        font-size: 15px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+    }
+    .headerSignUpContainer {
+        margin: 50px 0 0 0;
+    }
+    .userContainer {
+        padding: 0 20px;
+    }
+    .shoppingCartContainer.active {
+        position: fixed;
+        top: 5px;
+        left: 5px;
+        display: block;
+        z-index: 999;
+    }
+    .menu .menuContent a .icon {
+        display: none;
+    }
+    .headerUserContainer {
+        margin: 0;
+        width: 100%;
+    }
+}

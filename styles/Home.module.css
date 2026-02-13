@@ -1,0 +1,642 @@
+.heroSection {
+    position: relative;
+    height: 110vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.heroLine {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    height: 100%;
+    width: 20px;
+    background: #660066;
+    transform: rotate(10deg);
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.heroLeft {
+    width: 50%;
+    height: max-content;
+}
+
+.heroContent {
+    width: 100%;
+    height: max-content;
+}
+
+.heroHeader {
+    margin-bottom: 50px;
+    height: max-content;
+    width: 100%;
+}
+
+.heroHeader h2 {
+    font-size: 35px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.heroContentDetail {
+    height: max-content;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.heroContentDetail p {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.heroCtaContainer {
+    height: max-content;
+    width: 100%;
+}
+
+.heroCta {
+    background: #660066;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    border: 2px solid #660066;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.heroRight {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.heroImgContainer {
+    height: 700px;
+    width: 80%;
+}
+
+.heroImg {
+    height: 100%;
+    width: 100%;
+}
+
+
+/*About Us Begins*/
+
+.hireTalentSection {
+    height: max-content;
+    width: 100%;
+}
+
+.partnersContainer {
+    height: max-content;
+    width: 100%;
+    background: #ffffff;
+}
+
+.partnersContainer h3 {
+    color: #000000;
+    font-size: 30px;
+}
+
+.partnersHeader {
+    height: max-content;
+    width: 100%;
+    padding: 50px 80px;
+}
+
+.heroPartnerContainer {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.heroPartner {
+    height: 40px;
+    width: 150px;
+    margin: 0 10px 0 0;
+}
+
+.heroPartnerImgContainer{
+  position: relative;
+  height: 40px;
+  width: 150px;
+}
+
+.heroPartnerImg {
+    height: 100%;
+    width: 100%;
+}
+
+.hireTalentUsTop {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    padding: 50px 80px;
+}
+
+.hireTalentLeft {
+    width: 50%;
+    height: max-content;
+}
+
+.hireTalentLeftImgContainer {
+  position: relative;
+  height: 400px;
+  width: 500px;
+}
+
+.hireTalentImg {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.hireTalentRight {
+    height: max-content;
+    width: 50%;
+}
+
+.hireTalentRightHeader {
+    height: max-content;
+    width: 100%;
+    padding: 0 0 40px 0;
+}
+
+.hireTalentRightHeader h3 {
+    font-size: 35px;
+}
+
+.hireTalentRightContents {
+    height: max-content;
+    width: 100%;
+}
+
+.hireTalentRightContent {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.hireTalentRightContentImgContainer {
+    height: 30px;
+    width: 30px;
+    margin: 0 10px 0 0;
+}
+
+.hireTalentRightContnetImg {
+    height: 100%;
+    width: 100%;
+}
+
+.hireTalentRightContentDetails {
+    height: max-content;
+    width: calc(100% - 40px);
+}
+
+.hireTalentRightContentDetailsHeader {
+    height: max-content;
+    width: 100%;
+}
+
+.hireTalentRightContentDetailsHeader h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.hireTalentRightContentDetailsHeader p {
+    font-size: 15px;
+}
+
+.hireTalentRightCtaContainer {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hireTalentRightSignup {
+    background: #660066;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    border: 2px solid #660066;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hireTalentRightLearnHire {
+    border: 2px solid #ffffff;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin: 0 0 0 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/*About Us Ends*/
+
+
+/*browse-talent Begins*/
+
+.browseTalentSection {
+    height: max-content;
+    width: 100%;
+    padding: 0 80px 50px 80px;
+}
+
+.browseTalentHeader {
+    height: max-content;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.browseTalentHeader h2 {
+    font-size: 35px;
+}
+
+.browseTalent {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.browseTalentCard {
+    height: 150px;
+    width: 280px;
+    background: #333333;
+    text-decoration: none;
+    margin: 0 20px 20px 0;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.3s ease;
+}
+
+.browseTalentCard:hover {
+    background: #ffffff;
+}
+
+.browseTalentCardHeader {
+    margin-bottom: 50px;
+}
+
+.browseTalentCardHeader h3 {
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+
+.browseTalentCard:hover .browseTalentCardHeader h3,
+.browseTalentCard:hover .browseTalentContent p {
+    color: #660066;
+}
+
+.browseTalentContent p {
+    transition: 0.3s ease;
+}
+
+
+/*browse-talent ends*/
+
+
+/* Why Section */
+
+.whySection {
+  height: max-content;
+  width: 100vw;
+  display: flex;
+  padding: 50px 80px;
+}
+
+.whyLeft {
+  height: 410px;
+  width: 60%;
+  padding: 20px;
+  background: #333333;
+  border-radius: 10px;
+}
+
+.whyLeftHeader {
+  height: max-content;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.whyLeftHeader h2 {
+  font-size: 30px;
+}
+
+.whyLeftContainer {
+  height: max-content;
+  width: 100%;
+}
+
+.whyLeftContent {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.whyImgMainContianer {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.whyLeftImg {
+  height: 100%;
+  width: 100%;
+}
+
+.whyLeftContentDetails {
+  height: max-content;
+  width: calc(100% - 40px);
+}
+
+.whyLeftContentHeader {
+  height: max-content;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.whyLeftContentHeader h3 {
+  font-size: 20px;
+}
+
+.whyLeftContentDetail {
+  height: max-content;
+  width: 100%;
+}
+
+.whyLeftContentDetail p {
+  font-size: 16px;
+}
+
+.whyRight {
+  height: 410px;
+  width: 38%;
+  background: #660066;
+  border-radius: 10px;
+  margin-left: 2%;
+  padding: 20px;
+}
+
+.whyRightHeader {
+  height: max-content;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.whyRightHeader h3 {
+  font-size: 25px;
+}
+
+.ratingsContainer {
+  height: max-content;
+  width: 100%;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.ratingImgContainer {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.ratingImg {
+  height: 100%;
+  width: 100%;
+}
+
+/* Talents Section */
+
+.talentsSection {
+  height: max-content;
+  width: 100%;
+  padding: 50px 80px;
+}
+
+.talents {
+  height: max-content;
+  width: 100%;
+  border-radius: 10px;
+  background: #ffa500;
+  display: flex;
+}
+
+.talentsLeft {
+  position: relative;
+  height: 30vw;
+  width: 55%;
+}
+
+.talentsImg {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.talentsRight {
+  width: 45%;
+  height: 100%;
+  padding: 20px;
+}
+
+.talentsRight h3 {
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.talentsRight h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.talentsRight p {
+  margin-bottom: 40px;
+}
+
+.talentsRight a {
+  border: 2px solid #ffffff;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-left: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Media Queries */
+
+@media screen and (min-height: 1366px) {
+  .heroSection {
+    height: 50vh;
+  }
+}
+
+@media only screen and (max-width: 1280px) and (min-width: 1001px) {
+  .browseTalentCard {
+    width: 26vw;
+  }
+
+  .hireTalentLeftImgContainer {
+    height: 300px;
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+  .heroSection {
+    height: 65vh;
+  }
+
+  .hireTalentUsTop {
+    flex-direction: column;
+  }
+
+  .hireTalentLeft,
+  .hireTalentRight {
+    width: 100%;
+  }
+
+  .hireTalentRight {
+    margin-top: 40px;
+  }
+
+  .whyLeft,
+  .whyRight {
+    height: max-content;
+  }
+
+  .talents {
+    height: 320px;
+  }
+
+  .talentsLeft {
+    height: 320px;
+    width: 55%;
+  }
+
+  .talentsRight a {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .heroSection {
+    height: 80vh;
+  }
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  .heroRight {
+    display: none;
+  }
+
+  .heroLeft {
+    width: 100%;
+  }
+
+  .heroLine {
+    left: 65%;
+  }
+
+  .partnersHeader {
+    padding: 20px;
+  }
+
+  .heroPartnerContainer {
+    margin-top: 40px;
+  }
+
+  .heroPartner {
+    margin-bottom: 10px;
+  }
+
+  .hireTalentUsTop {
+    padding: 50px 20px;
+    flex-direction: column;
+  }
+
+  .hireTalentLeft,
+  .hireTalentRight {
+    width: 100%;
+  }
+
+  .hireTalentLeftImgContainer {
+    height: 300px;
+    width: 100%;
+  }
+
+  .hireTalentRight {
+    margin-top: 50px;
+  }
+
+  .hireTalentRightCtaContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hireTalentRightSignup {
+    margin-bottom: 20px;
+  }
+
+  .browseTalentSection {
+    padding: 0 20px 50px;
+  }
+
+  .whySection {
+    padding: 50px 20px;
+    flex-direction: column;
+  }
+
+  .whyLeft,
+  .whyRight {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .talentsSection {
+    padding: 50px 20px;
+  }
+
+  .talentsLeft {
+    display: none;
+  }
+
+  .talentsRight {
+    width: 100%;
+  }
+
+  .talentsRight a {
+    margin-left: 0;
+  }
+}

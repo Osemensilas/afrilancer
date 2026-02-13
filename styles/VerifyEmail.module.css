@@ -1,0 +1,73 @@
+.verifySection {
+    height: 100vh;
+    width: 100vw;
+}
+
+.registerHeader {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 80px;
+}
+
+.logoContainer {
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.logoImg {
+    height: 100%;
+    width: 100%;
+}
+
+.verify {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgContainer {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 40px;
+}
+
+.emialImg {
+    height: 100%;
+    width: 100%;
+}
+
+.verifyTop {
+    width: 50vw;
+    height: max-content;
+    margin-bottom: 40px;
+}
+
+.verifyTop p {
+    text-align: center;
+}
+
+.didRecieve {
+    color: #ff0000;
+    margin: 0 40px 0 0;
+}
+
+.checkMailBox {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #660066;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 767px) {
+    .verifyTop {
+        width: 80vw;
+    }
+}

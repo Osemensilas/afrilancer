@@ -1,0 +1,248 @@
+.heroSection {
+    height: 100vh;
+    width: 100vw;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.heroLeft {
+    width: 50%;
+    height: max-content;
+}
+
+.heroRight {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.heroLeft h1 {
+    margin-bottom: 40px;
+}
+
+.heroCallToActionContainer {
+    height: max-content;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.heroCta {
+    padding: 15px 30px;
+    background: #660066;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.heroRightImgContainer {
+    height: 80%;
+    width: 85%;
+}
+
+.heroImg {
+    height: 100%;
+    width: 100%;
+}
+
+/* Access Begins */
+
+.accessSection {
+    height: max-content;
+    width: 100%;
+    padding: 50px 80px;
+    background: #ffffff;
+}
+
+.access {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.accessRightHeader {
+    height: max-content;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.accessRightHeader h2 {
+    color: #000000;
+}
+
+.accessRightContent {
+    height: max-content;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.accessRightContent p {
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.accessLeft {
+    width: 50%;
+    height: max-content;
+}
+
+.accessImgContainer {
+    height: 400px;
+    width: 400px;
+}
+
+.accessImg {
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.accessRight {
+    width: 50%;
+    height: max-content;
+}
+
+.hireTalentRightContents {
+    height: max-content;
+    width: 100%;
+}
+
+.hireTalentRightContent {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.hireTalentRightContentImgContainer {
+    height: 30px;
+    width: 30px;
+    margin: 0 10px 0 0;
+}
+
+.hireTalentRightContentImg {
+    height: 100%;
+    width: 100%;
+}
+
+.hireTalentRightContentDetails {
+    height: max-content;
+    width: calc(100% - 40px);
+}
+
+.hireTalentRightContentDetailsHeader {
+    height: max-content;
+    width: 100%;
+}
+
+.hireTalentRightContentDetailsHeader h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.hireTalentRightContentDetailsHeader p {
+    font-size: 15px;
+    color: #000000;
+}
+
+.hireTalentRightCtaContainer {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hireTalentRightSignup {
+    background: #660066;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 17px;
+    border: 2px solid #660066;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Access Ends */
+
+@media screen and (min-height: 1366px) {
+    #hero {
+        height: 55vh;
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+    #hero {
+        height: 55vh;
+        width: 100vw;
+    }
+
+    .hero {
+        padding: 0 30px;
+    }
+
+    #access {
+        padding: 50px 30px;
+    }
+
+    .access {
+        flex-direction: column;
+    }
+
+    .accessLeft {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .accessRight {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #access {
+        padding: 50px 20px;
+    }
+
+    .heroRight {
+        display: none;
+    }
+
+    .heroLeft {
+        width: 100%;
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+
+    .access {
+        flex-direction: column;
+    }
+
+    .accessLeft {
+        width: 100%;
+    }
+
+    .accessImgContainer {
+        height: 100%;
+        width: 100%;
+    }
+
+    .accessRight {
+        width: 100%;
+    }
+}

@@ -1,0 +1,174 @@
+.createAccountSection {
+  height: max-content;
+  width: 100vw;
+}
+
+/* HEADER */
+.registerHeader {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 80px;
+}
+
+.logoContainer {
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.logoImg {
+  height: 100%;
+  width: 100%;
+}
+
+/* MAIN */
+.createAccount {
+  height: calc(90vh - 60px);
+  width: 100%;
+  padding: 0 80px 0 80px;
+}
+
+.createAccountTop {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  padding: 50px 0;
+}
+
+.createAccountTopLeft,
+.createAccountTopRight {
+  height: 100%;
+  width: 50%;
+}
+
+.createAccountHeader {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.createAccountHeader h2 {
+  font-size: 20px;
+}
+
+.createAccountTopLeftContent {
+  width: 100%;
+}
+
+/* BOTTOM */
+.createAccountBottom {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #222222;
+  padding: 15px 0;
+  padding: 20px 40px;
+}
+
+/* BUTTONS */
+.navBtn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #660066;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.active {
+  background: #464545;
+  color: #c0c0c0;
+  cursor: not-allowed;
+}
+
+.skipStep {
+  color: #660066;
+  margin-right: 20px;
+}
+
+/* EDIT SECTION */
+.createAccountTopLeft {
+  width: 25%;
+  border-right: 1px solid #222222;
+}
+
+.categoryContent p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.categoryContent p.active {
+  color: #660066;
+  font-weight: 400;
+}
+
+.createAccountTopRight {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 40px;
+}
+
+.categoryLeftHeader {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.userCategoryContent {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.userCategoryContent input {
+  margin-right: 20px;
+  accent-color: #660066;
+}
+
+.userCategoryContent label {
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) and (min-width: 768px) {
+  .createAccountTop {
+    flex-direction: column;
+  }
+
+  .createAccountTopLeft,
+  .createAccountTopRight {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .createAccount {
+    padding: 50px 20px 0 20px;
+  }
+
+  .createAccountTop {
+    flex-direction: column;
+  }
+
+  .createAccountTopLeft,
+  .createAccountTopRight {
+    width: 100%;
+  }
+
+  .createAccountTopRight {
+    padding: 0;
+  }
+}

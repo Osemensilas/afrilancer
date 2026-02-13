@@ -1,0 +1,201 @@
+.createAccountSection {
+    height: max-content;
+    width: 100vw;
+}
+
+.createAccountHeader {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+}
+
+.logoContainer {
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.logoImg {
+    height: 100%;
+    width: 100%;
+}
+
+.freelancerJoin {
+    color: #ffffff;
+}
+
+.freelancerJoin a {
+    color: #660066;
+    margin: 0 0 0 40px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.createAccount {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    margin: 50px 0;
+}
+
+.createAcountForm {
+    width: 500px;
+    height: max-content;
+}
+
+.createAcountForm.active {
+    display: none;
+}
+
+.formHeader {
+    height: max-content;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.formHeader h1 {
+    font-size: 25px;
+    padding: 0 0 20px 0;
+}
+
+.formContent {
+    height: max-content;
+    width: 100%;
+}
+
+.detailsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+.details {
+    height: max-content;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.details label {
+    color: #c0c0c0;
+    margin-bottom: 5px;
+}
+
+.details .detail {
+    height: 40px;
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    background: transparent;
+    padding: 0 10px;
+    border-radius: 5px;
+    color: #c0c0c0;
+    font-size: 15px;
+}
+
+.error {
+    color: #ff0000;
+    margin: 5px 0;
+}
+
+.termsContainers {
+    height: max-content;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.termsContainer {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.termsContainer input {
+    margin: 0 10px 0 0;
+}
+
+.termsDetails {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.termsDetails a {
+    color: #660066;
+}
+
+.submitBtnContainer {
+    height: max-content;
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submitBtn {
+    padding: 10px 15px;
+    background: #660066;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid #660066;
+    border-radius: 5px;
+    outline: none;
+}
+
+.alreadyContainer {
+    color: #ffffff;
+}
+
+.alreadyContainer a {
+    color: #660066;
+    font-size: 17px;
+}
+
+.emailConfirmation {
+    width: 500px;
+    height: max-content;
+}
+
+.emailConfirmation.active {
+    display: none;
+}
+
+.emailConfirmation p {
+    text-align: center;
+    line-height: 24px;
+}
+
+@media only screen and (max-width: 767px) {
+    .createAccount {
+        padding: 0 10px;
+    }
+
+    .createAcountForm {
+        width: 100vw;
+    }
+
+    .formHeader h1 {
+        font-size: 20px;
+    }
+
+    .createAccountHeader {
+        align-items: flex-start;
+        padding: 20px 20px;
+        flex-direction: column;
+    }
+
+    .createAccountHeaderLeft {
+        position: absolute;
+        top: 95%;
+        left: 10px;
+    }
+}
