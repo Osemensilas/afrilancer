@@ -62,12 +62,7 @@ const Register = () => {
                         <div className={styles.cardTop}>
                             <div className={styles.cardTopLeft}>
                             <div className={styles.cardImgContainer}>
-                                <Image
-                                src="/client.png"
-                                alt="Client"
-                                fill
-                                className={styles.cardImg}
-                                />
+                                <i className="fa fa-user"></i>
                             </div>
                             </div>
 
@@ -88,12 +83,7 @@ const Register = () => {
                         <div className={styles.cardTop}>
                             <div className={styles.cardTopLeft}>
                                 <div className={styles.cardImgContainer}>
-                                    <Image
-                                    src="/freelancer.png"
-                                    alt="Freelancer"
-                                    fill
-                                    className={styles.cardImg}
-                                    />
+                                    <i className="fa fa-laptop-code"></i>
                                 </div>
                             </div>
 
