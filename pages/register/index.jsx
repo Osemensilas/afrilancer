@@ -104,7 +104,7 @@ const Register = () => {
                 </button>
 
                 <div className={styles.registerAlreadyAccountContainer}>
-                Already a member? <Link href="/signin">Sign In</Link>
+                    Already a member? <Link href="/signin">Sign In</Link>
                 </div>
             </div>
             </section>
