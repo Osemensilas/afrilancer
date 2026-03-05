@@ -3,8 +3,11 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from 'react';
 import Link from "next/link";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Client = () => {
+
+    const route = useRouter();
 
     const searchParams = useSearchParams();
 
@@ -124,6 +127,7 @@ const Client = () => {
             password1: formData.password1,
             password2: formData.password2,
             mailTips: mailTips,
+            accountType: formData.acctType,
         };
 
         try {
@@ -135,8 +139,24 @@ const Client = () => {
                 },withCredentials: true
             })
             console.log(response.data);
+
+            if (response.data.status === "success"){
+                route.push("/register/confirm-email");
+            }
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    const termsTextClicked = (e) => {
+        const inputField = e.currentTarget.parentElement.children[0];
+
+        if(!inputField.checked){
+            inputField.checked = true;
+            setTerms(true);
+        }else{
+            inputField.checked = false;
+            setTerms(false);
         }
     }
 
@@ -233,7 +253,7 @@ const Client = () => {
                                 value={terms}
                                 onChange={termsChanged}
                             />
-                            <div className={styles.termsDetails}>
+                            <div onClick={termsTextClicked} className={styles.termsDetails}>
                                 Yes, I understand and agree will{" "}
                                 <a href="#">Afrilancer Terms of Service</a>, including the{" "}
                                 <a href="#">user Agreement</a>, and{" "}

@@ -134,6 +134,7 @@
 .termsDetails {
     color: #ffffff;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .termsDetails a {
