@@ -141,7 +141,7 @@ const Client = () => {
             console.log(response.data);
 
             if (response.data.status === "success"){
-                route.push("/register/confirm-email");
+                route.push(`/register/confirm-email?email=${formData.email}`);
             }
         } catch (error) {
             console.log(error);

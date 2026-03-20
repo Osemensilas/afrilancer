@@ -1,7 +1,25 @@
+import axios from "axios";
+import { useSearchParams } from "next/navigation";
+
 const ConfirmEmail = () => {
 
+    const searchParams = useSearchParams();
+
+    const email = searchParams.get('email');
+
     const resendMail = async () => {
-        console.log("Hello World");
+        try{
+            let url = "http://localhost:5067/api/auth/resend-confim-mail";
+
+            const response = await axios.post(url, {email: email}, {
+                headers: {
+                    "Content-Type" : "application/json",
+                },withCredentials: true
+            })
+            console.log(response.data);
+        }catch(error){
+            console.log("Error sending email: ", error);
+        }
     }
 
     return ( 

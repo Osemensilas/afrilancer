@@ -54,7 +54,7 @@ const SignIn = () => {
                 route.push("/freelancer/find-job")
             }
 
-            if (response.data.status === "success" && response.data.user_type === "freelancer"){
+            if (response.data.status === "success" && response.data.user_type === "client"){
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem("user", JSON.stringify(response.data.user));
 
