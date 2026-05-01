@@ -12,6 +12,11 @@ const ProjectDescription = () => {
                 <div className="">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corporis consequatur vero repellat perferendis debitis ullam beatae laborum sed, sunt, aut inventore aliquam modi distinctio voluptatum non nostrum tempore numquam.</p>
                 </div>
+                <div className="">
+                    <p className="text-sm bg-primary rounded p-2">HTML</p>
+                    <p className="text-sm bg-primary rounded p-2">CSS</p>
+                    <p className="text-sm bg-primary rounded p-2">JavaScrip</p>
+                </div>
             </div>
             <div className="h-max w-[30%]">
                 <h2 className="text-accent mb-10 text-xl">Project Unverified</h2>

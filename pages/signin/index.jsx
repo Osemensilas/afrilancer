@@ -45,20 +45,18 @@ const SignIn = () => {
                     "Content-Type" : "application/json",
                 },withCredentials: true
             })
-            console.log(response.data);
 
-            if (response.data.status === "success" && response.data.user_type === "freelancer"){
+            if (response.data.status === "success"){
+
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem("user", JSON.stringify(response.data.user));
+                localStorage.setItem("user_type", JSON.stringify(response.data.user_type));
 
-                route.push("/freelancer/find-job")
-            }
-
-            if (response.data.status === "success" && response.data.user_type === "client"){
-                localStorage.setItem("token", response.data.token);
-                localStorage.setItem("user", JSON.stringify(response.data.user));
-
-                route.push("/client/");
+                if (response.data.user_type === "freelancer"){
+                    route.push("/freelancer/find-job")
+                }else{
+                    route.push("/client/");
+                }
             }
 
             if (response.data.status === "error"){

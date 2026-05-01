@@ -2,11 +2,49 @@ import styles from "../styles/Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Header = () => {
 
     const router = useRouter();
     const currentPath = router.pathname;
+    const [activeClient, setActiveClient] = useState(false);
+    const [userType, setUserType] = useState(null);
+    
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const clientType = JSON.parse(localStorage.getItem("user_type"));
+
+        if (!token) return;
+
+        if (!clientType){
+            setActiveClient(false);
+        }else{
+            setActiveClient(true);
+            setUserType(clientType);
+        }
+    },[userType])
+
+    const logout = () => {
+        let url = "http://localhost:5067/api/auth/logout";
+
+        async function logoutUser(){
+            try {
+                const response = await axios.post(url, {'logout': true}, {
+                    headers: {
+                        "Content-Type" : "application/json"
+                    },withCredentials: true
+                })
+                console.log(response.data);
+            } catch (error) {
+                console.log("Error logging out: ", logout);
+            }
+        }
+
+        logoutUser();
+    }
 
     return ( 
         <>
@@ -29,7 +67,9 @@ const Header = () => {
                 </div>
 
                 {/* Right */}
-                <div className={styles.headerRight}>
+                <div className={`styles.headerRight ${
+                                activeClient ? "hidden" : "flex items-center"
+                            }`}>
                     <nav className={styles.headerNav}>
                         <ul className={styles.menu}>
                         <li className={styles.menuContent}>
@@ -46,22 +86,53 @@ const Header = () => {
                         <div className={styles.headerDeveloperContainer}></div>
 
                         <div className={styles.headerSignUpContainer}>
-                        <div className={styles.headerSignUp}>
-                            <ul className={styles.menu}>
-                            <li className={styles.menuContent}>
-                                <Link href="/register" className={styles.signupBtn}>
-                                Register
-                                </Link>
-                            </li>
-                            <li className={styles.menuContent}>
-                                <Link href="/signin" className={styles.loginBtn}>
-                                Login
-                                </Link>
-                            </li>
+                        <div className={`styles.headerSignUp`}>
+                            <ul className={`${styles.menu} flex items-center`}>
+                                <li className={`styles.menuContent`}>
+                                    <Link href="/register" className={styles.signupBtn}>
+                                    Register
+                                    </Link>
+                                </li>
+                                <li className={styles.menuContent}>
+                                    <Link href="/signin" className={styles.loginBtn}>
+                                    Login
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         </div>
                     </div>
+                </div>
+
+                {/* Client Nav*/}
+                <div className={`h-max w-max flex items-center gap-20
+                    ${activeClient ? "" : "hidden"}
+                    `}>
+                    <ul className={`${userType === "freelancer" ? "flex items-center gap-5" : "hidden"}`}>
+                        <li className="h-max w-max">
+                            <Link href={"/client/profile"} className={`
+                                ${currentPath === "/freelancer/find-job" ? "text-primary" : "text-accent"}
+                                `}>Find Job</Link>
+                        </li>
+                        <li className="h-max w-max">
+                            <Link href={"/client/profile"} className={`
+                                ${currentPath === "/freelancer/profile" ? "text-primary" : "text-accent"}
+                                `}>Profile</Link>
+                        </li>
+                    </ul>
+                    <ul className={`${userType === "client" ? "flex items-center gap-5" : "hidden"}`}>
+                        <li className="h-max w-max">
+                            <Link href={"/client"} className={`
+                                ${currentPath === "/client" ? "text-primary" : "text-accent"}
+                                `}>Home</Link>
+                        </li>
+                        <li className="h-max w-max">
+                            <Link href={"/client/profile"} className={`
+                                ${currentPath === "/client/profile" ? "text-primary" : "text-accent"}
+                                `}>Profile</Link>
+                        </li>
+                    </ul>
+                    <button type="button" onClick={logout} className="bg-danger py-2 px-5 rounded">Logout</button>
                 </div>
 
                 {/* Hamburger */}
