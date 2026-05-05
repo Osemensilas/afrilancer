@@ -7,13 +7,14 @@
 :root {
   --accent: #ffffff;
   --background: #000000;
-  --backgroundLight: #92b2f5;
+  --backgroundLight: #353333;
   --primary: #660066;
   --bars: #1A2E66;
   --text: #000000;
   --grey: #c0c0c0;
   --lighterGrey: #eeeded;
   --danger: #fa0606;
+  --success: #09c732;
 }
 
 * {
@@ -64,9 +65,10 @@ h3 {
 }
 
 p {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 300;
     color: #ffffff;
+    opacity: 0.8;
 }
 
 a {

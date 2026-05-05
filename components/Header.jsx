@@ -9,22 +9,45 @@ const Header = () => {
 
     const router = useRouter();
     const currentPath = router.pathname;
-    const [activeClient, setActiveClient] = useState(false);
+    const [activeClient, setActiveClient] = useState(null);
     const [userType, setUserType] = useState(null);
     
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        const clientType = JSON.parse(localStorage.getItem("user_type"));
+        const client = JSON.parse(localStorage.getItem("user"));
+        const clientType = client?.user_type;
 
         if (!token) return;
 
-        if (!clientType){
+        function isExpiredToken(token){
+            try {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                return payload.exp * 1000 < Date.now();
+            } catch (error) {
+                return true;
+            }
+        }
+
+        if (isExpiredToken(token)){
+            localStorage.removeItem("token");
+            localStorage.removeItem("user");
+            localStorage.removeItem("active");
+
+            router.push("/");
+        }
+
+        if (!client){
             setActiveClient(false);
         }else{
             setActiveClient(true);
             setUserType(clientType);
         }
+
+        // if (!activeToken){
+        //     router.push('/');
+        // }
+        console.log(client);
     },[userType])
 
     const logout = () => {
@@ -37,7 +60,14 @@ const Header = () => {
                         "Content-Type" : "application/json"
                     },withCredentials: true
                 })
-                console.log(response.data);
+
+                if (response.data.status === "success"){
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("active");
+
+                    router.push("/");
+                }
             } catch (error) {
                 console.log("Error logging out: ", logout);
             }
@@ -110,12 +140,12 @@ const Header = () => {
                     `}>
                     <ul className={`${userType === "freelancer" ? "flex items-center gap-5" : "hidden"}`}>
                         <li className="h-max w-max">
-                            <Link href={"/client/profile"} className={`
+                            <Link href={"/freelancer/profile"} className={`
                                 ${currentPath === "/freelancer/find-job" ? "text-primary" : "text-accent"}
                                 `}>Find Job</Link>
                         </li>
                         <li className="h-max w-max">
-                            <Link href={"/client/profile"} className={`
+                            <Link href={"/freelancer/profile"} className={`
                                 ${currentPath === "/freelancer/profile" ? "text-primary" : "text-accent"}
                                 `}>Profile</Link>
                         </li>
@@ -132,9 +162,10 @@ const Header = () => {
                                 `}>Profile</Link>
                         </li>
                     </ul>
-                    <button type="button" onClick={logout} className="bg-danger py-2 px-5 rounded">Logout</button>
+                    <button type="button" onClick={logout} className={`bg-danger py-2 px-5 rounded
+                        ${activeClient ? "" : ""}
+                        `}>Logout</button>
                 </div>
-
                 {/* Hamburger */}
                 <div className={styles.hamburgerContainer}>
                     <div className={styles.hamburger}></div>

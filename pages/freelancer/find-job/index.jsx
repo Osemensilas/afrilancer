@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import JobCard from "@/components/ui/JobCard";
+import axios from "axios";
 
 const FindJOb = () => {
 
@@ -11,8 +13,26 @@ const FindJOb = () => {
     }
 
     useEffect(() => {
+
         async function getProjects(showings){
-            console.log(showings);
+
+            const token = localStorage.getItem("token");
+            let url = "http://localhost:5067/api/freelancer/get-job-post";
+
+            try {
+                const response = await axios.get(url, {
+                    params: {
+                        filter: showings
+                    },
+                    headers: {
+                        "Content-Type" : "appliaction/json",
+                        "Authorization" : `Bearer ${token}`
+                    },withCredentials: true
+                })
+                console.log(response.data);
+            } catch (error) {
+                console.log("Error fetching projects: ", error);
+            }
         }
 
         getProjects(showings);
@@ -53,48 +73,17 @@ const FindJOb = () => {
                         </button>
                     </div>
                     <div className="h-max w-full">
-                        <Link href={"/project-description?id=tedhfbrujn489hnd"} className="mb-5 text-sm border border-grey flex flex-col p-5 rounded">
-                            <div className="h-max w-full">
-                                <div className="h-max w-full flex items-center gap-3 mb-4">
-                                    <p className="text-sm">Duration: Less than a month</p>
-                                    <p className="text-sm">Budget: {Number(30000).toLocaleString()}</p>
+                        {
+                            jobs.length > 0 ? (
+                                jobs.map((job) => (
+                                    <JobCard key={job.id} job={job} />
+                                ))
+                            ) : (
+                                <div className="h-max w-full flex items-center justify-start py-10 px-10">
+                                    <p>No jobs have been posted yet!</p>
                                 </div>
-                                <div className="h-max w-full">
-                                    <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate alias sed quibusdam, aliquid maiores libero nam id animi consequuntur nemo ducimus itaque obcaecati nulla dignissimos, ab facilis aut accusantium?</p>
-                                </div>
-                            </div>
-                            <div className="mt-4 flex items-center justify-between">
-                                <p className="text-sm">Payment Verified</p>
-                                <p className="text-sm">Posted: 5 hours ago</p>
-                            </div>
-                            <div className="h-max w-full flex flex-wrap items-center mt-4 gap-2">
-                                <p className="text-sm bg-primary rounded p-2">HTML</p>
-                                <p className="text-sm bg-primary rounded p-2">CSS</p>
-                                <p className="text-sm bg-primary rounded p-2">Next.js</p>
-                                <p className="text-sm bg-primary rounded p-2">WordPress</p>
-                            </div>
-                        </Link>
-                        <Link href={"/project-description?id=tedhfbrujn489hnd"} className="mb-5 text-sm border border-grey flex flex-col p-5 rounded">
-                            <div className="h-max w-full">
-                                <div className="h-max w-full flex items-center gap-3 mb-4">
-                                    <p className="text-sm">Duration: Less than a month</p>
-                                    <p className="text-sm">Budget: {Number(30000).toLocaleString()}</p>
-                                </div>
-                                <div className="h-max w-full">
-                                    <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cupiditate alias sed quibusdam, aliquid maiores libero nam id animi consequuntur nemo ducimus itaque obcaecati nulla dignissimos, ab facilis aut accusantium?</p>
-                                </div>
-                            </div>
-                            <div className="mt-4 flex items-center justify-between">
-                                <p className="text-sm">Payment Verified</p>
-                                <p className="text-sm">Posted: 5 hours ago</p>
-                            </div>
-                            <div className="h-max w-full flex flex-wrap items-center mt-4 gap-2">
-                                <p className="text-sm bg-primary rounded p-2">HTML</p>
-                                <p className="text-sm bg-primary rounded p-2">CSS</p>
-                                <p className="text-sm bg-primary rounded p-2">Next.js</p>
-                                <p className="text-sm bg-primary rounded p-2">WordPress</p>
-                            </div>
-                        </Link>
+                            )
+                        }
                     </div>
                 </div>
                 <div className="h-max w-[30%]">

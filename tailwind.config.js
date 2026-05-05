@@ -12,6 +12,7 @@ module.exports = {
         bars: "var(--bars)",
         background: "var(--background)",
         backgroundLight: "var(--backgroundLight)",
+        success: "var(--success)",
         accent: "var(--accent)",
         text: "var(--text)",
         grey: "var(--grey)",
