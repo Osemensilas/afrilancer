@@ -32,13 +32,13 @@ const Reviews = () => {
     return ( 
         <>
         <section className="h-max w-full px-10 pb-10">
-            <h2>Developers Review</h2>
+            <h2>Reviews</h2>
             <div className="h-max w-full sm:w-3/5 mt-5">
                 {
                     reviews.length > 0 ? (reviews.map((review) => (
                         <ReviewCard key={review.id} review={review} />
                     ))) : (
-                        <div className="h-max w-full flex items-center justify-start py-10 px-10">
+                        <div className="h-max w-full flex items-center justify-start py-10">
                             <p>You do not have any reviews yet!</p>
                         </div>
                     )

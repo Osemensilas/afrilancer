@@ -44,10 +44,6 @@ const Header = () => {
             setUserType(clientType);
         }
 
-        // if (!activeToken){
-        //     router.push('/');
-        // }
-        console.log(client);
     },[userType])
 
     const logout = () => {
@@ -140,7 +136,7 @@ const Header = () => {
                     `}>
                     <ul className={`${userType === "freelancer" ? "flex items-center gap-5" : "hidden"}`}>
                         <li className="h-max w-max">
-                            <Link href={"/freelancer/profile"} className={`
+                            <Link href={"/freelancer/find-job"} className={`
                                 ${currentPath === "/freelancer/find-job" ? "text-primary" : "text-accent"}
                                 `}>Find Job</Link>
                         </li>

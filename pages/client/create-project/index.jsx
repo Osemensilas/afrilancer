@@ -15,6 +15,7 @@ const CreateProject = () => {
     const [newSkill, setNewSkill] = useState('');
     const [clientSkills, setClienSkills] = useState([]);
     const [formData, setFormData] = useState({
+        title: '',
         description: '',
         skill: [],
         budget: '',
@@ -35,8 +36,8 @@ const CreateProject = () => {
 
     const submitBtnClicked = async (e) => {
         if (showDescription){
-            if (formData.description === "" || formData.duration === ""){
-                setError("Description and duration are required.");
+            if (formData.description === "" || formData.duration === "" || formData.title){
+                setError("All fields are required.");
                 return;
             }
             setError("");
@@ -168,9 +169,13 @@ const CreateProject = () => {
                             ${showDescription ? "" : "hidden"}
                             `}>
                             <div className="h-max w-full flex flex-col gap-3">
+                                <label htmlFor="title" className="text-grey">Project Title</label>
+                                <input type="text" name="title" id="title" value={formData.title} onChange={handleChanged} className="border border-grey rounded outline-none w-full h-10 text-accent bg-transparent px-5" />
+                            </div>
+                            <div className="h-max w-full flex flex-col gap-3">
                                 <div className="h-max w-full flex flex-col gap-2">
                                     <label htmlFor="duration" className="text-grey">Duration</label>
-                                    <select name="duration" value={formData.duration} onChange={handleChanged} id="duration" className="border border-grey rounded outline-none w-full h-10 text-accent bg-transparent">
+                                    <select name="duration" value={formData.duration} onChange={handleChanged} id="duration" className="px-5 border border-grey rounded outline-none w-full h-10 text-accent bg-transparent">
                                         <option value="" className="text-accent">-- Select Duration --</option>
                                         <option value="less than a month">Less than a month</option>
                                         <option value="one - three month">One to three month</option>

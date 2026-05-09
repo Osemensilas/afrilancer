@@ -74,3 +74,27 @@ p {
 a {
     font-size: 17px;
 }
+
+/* ONLY this section scrollbar */
+.project-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* DO NOT affect vertical scrollbar */
+.project-scroll::-webkit-scrollbar:vertical {
+  height: auto;
+  width: 0px;
+}
+
+.project-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.project-scroll::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 999px;
+}
+
+.project-scroll::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}

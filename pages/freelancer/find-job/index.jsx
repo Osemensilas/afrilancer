@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import JobCard from "@/components/ui/JobCard";
 import axios from "axios";
 
 const FindJOb = () => {
 
     const [showings, setShowings] = useState('best fit');
-    const [jobs, getJobs] = useState([]);
+    const [jobs, setJobs] = useState([]);
 
     const filterClicked = (x) => {
         setShowings(x);
@@ -29,7 +28,10 @@ const FindJOb = () => {
                         "Authorization" : `Bearer ${token}`
                     },withCredentials: true
                 })
-                console.log(response.data);
+
+                if (response.data.message === "success"){
+                    setJobs(response.data.jobs);
+                }
             } catch (error) {
                 console.log("Error fetching projects: ", error);
             }
@@ -63,12 +65,12 @@ const FindJOb = () => {
                                 ${showings === "most recent" ? "bg-primary" : "hidden"}
                                 `}></div>
                         </button>
-                        <button type="button" onClick={() => filterClicked("saved")}>
+                        <button type="button" onClick={() => filterClicked("applied")}>
                             <p className={`text-base
-                                ${showings === "saved" ? "text-primary" : "text-accent"}
-                                `}>Saved</p>
+                                ${showings === "applied" ? "text-primary" : "text-accent"}
+                                `}>Applied</p>
                             <div className={`text-base h-[2px]
-                                ${showings === "saved" ? "bg-primary" : "hidden"}
+                                ${showings === "applied" ? "bg-primary" : "hidden"}
                                 `}></div>
                         </button>
                     </div>
@@ -80,7 +82,15 @@ const FindJOb = () => {
                                 ))
                             ) : (
                                 <div className="h-max w-full flex items-center justify-start py-10 px-10">
-                                    <p>No jobs have been posted yet!</p>
+                                    {
+                                        showings === "best fit" ? (
+                                            <p>No best yet!</p>
+                                        ) : showings === "most recent" ? (
+                                            <p>No jobs have been posted yet!</p>
+                                        ) : (
+                                            <p>You have not applied yet!</p>
+                                        )
+                                    }
                                 </div>
                             )
                         }

@@ -1,4 +1,6 @@
 import ClientProfile from "@/components/client/Profile";
+import Projects from "@/components/client/Projects";
+import Reviews from "@/components/client/Reviews";
 import Skill from "@/components/client/Skills";
 
 const Profile = () => {
@@ -6,6 +8,8 @@ const Profile = () => {
         <>
         <ClientProfile />
         <Skill />
+        <Reviews />
+        <Projects />
         </>
     );
 }
