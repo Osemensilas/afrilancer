@@ -215,7 +215,7 @@ export default function JobPost() {
             const token = localStorage.getItem('token');
             const url = "http://localhost:5067/api/freelancer/job-apply";
 
-            const response = await axios.post(url, {jobId: project_id} { 
+            const response = await axios.post(url, {jobId: project_id}, { 
                 headers: {
                     "Authorization" : `Bearer ${token}`,
                     "Content-Type" : "multipart/form-data"
